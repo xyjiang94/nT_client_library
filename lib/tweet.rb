@@ -12,7 +12,10 @@ class Tweet
         end
       end
 
-    
-
+      def self.create_tweet(id, content)
+          puts "start"
+          response = Typhoeus::Request.put("#{base_uri}/api/v1/users/#{id}/tweets/#{content}")
+          parse_response(response)
+        end
 
 end
